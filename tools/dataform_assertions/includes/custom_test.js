@@ -100,9 +100,21 @@ function test_gender_status(colName){
 }
 
 /* Name check*/
+//TEST DONE
 function test_name_validity(colName){
-    var result_query = "REGEXP_CONTAINS(" + colName + ", r\"[a-zA-Z0-9]+\")"
+    var result_query = "REGEXP_CONTAINS(" + colName + ", r\"^[a-zA-Z0-9]+$\")"
     return result_query
+}
+
+//TEST DONE
+function test_last_name_unique(colName1, colName2){
+    var result_query = colName1 + " != " + colName2
+    return result_query
+}
+
+//TEST TODO
+function test_same_character_more_than_two_times(colName){
+    
 }
 module.exports={
     /*
@@ -126,5 +138,6 @@ module.exports={
    test_email_validity,
    test_marital_status,
    test_gender_status,
-   test_name_validity
+   test_name_validity,
+   test_last_name_unique
 }
