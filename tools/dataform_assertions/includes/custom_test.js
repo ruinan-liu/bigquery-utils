@@ -114,7 +114,10 @@ function test_last_name_unique(colName1, colName2){
 
 //TEST TODO
 function test_same_character_more_than_two_times(colName){
-    
+    var regex = "(aaa)+|(bbb)+|(ccc)+|(ddd)+|(eee)+|(fff)+|(ggg)+|(hhh)+|(iii)+|(jjj)+|(kkk)+|(lll)+|(mmm)+|" + 
+    "(nnn)+|(ooo)+|(ppp)+|(qqq)+|(rrr)+|(sss)+|(ttt)+|(uuu)+|(vvv)+|(www)+|(xxx)+|(yyy)+|(zzz)+"
+    var query_result = "NOT REGEXP_CONTAINS(" + colName + ", r'"+ regex + "')"
+    return query_result
 }
 module.exports={
     /*
@@ -139,5 +142,6 @@ module.exports={
    test_marital_status,
    test_gender_status,
    test_name_validity,
-   test_last_name_unique
+   test_last_name_unique,
+   test_same_character_more_than_two_times
 }

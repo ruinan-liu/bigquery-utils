@@ -8,7 +8,7 @@ config {
         nonNull: ["first_name","last_name","date_of_birth","gender","RFC", "telephone_number"],
         rowConditions:
         [
-            custom_test.test_last_name_unique("last_name", "second_last_name")
+            custom_test.test_same_character_more_than_two_times("first_name")
         ]
     }
 }
