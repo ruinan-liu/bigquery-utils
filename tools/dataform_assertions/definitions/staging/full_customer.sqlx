@@ -5,11 +5,7 @@ config {
     name: "full_customer_information",
     assertions: {
         uniqueKey: ["customerID"],
-        nonNull: ["first_name","last_name","date_of_birth","gender","RFC", "telephone_number"],
-        rowConditions:
-        [
-            custom_test.test_same_character_more_than_two_times("first_name")
-        ]
+        nonNull: ["first_name","last_name","date_of_birth","gender","RFC", "telephone_number"]
     }
 }
 
