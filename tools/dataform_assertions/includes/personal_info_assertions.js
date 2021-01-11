@@ -2,15 +2,17 @@
     Custom dataform assertions for personal informations
 */
 
-/* Email Assertions */
-//TEST DONE
+/* 
+This assertion checks whether the input email format is valid
+*/
 function test_email_validity(colName){
     var result_query = "REGEXP_CONTAINS(" + colName + ", r\"^[\\w.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$\")"
     return result_query
 }
 
-/* Marital Status */
-//TEST DONE
+/*
+    This assertion checks whether the input marital status is within an acceptable list 
+*/
 function test_marital_status(colName){
     var marital_list = "[\"Married\", \"Single\", \"Divorced\", \"Widowed\"]"
     var result_query = colName + 
@@ -18,8 +20,9 @@ function test_marital_status(colName){
     return result_query
 }
 
-/* Gender check */
-//TEST DONE
+/*
+    This assertion checks whether the input gender status is within an acceptable list
+*/
 function test_gender_status(colName){
     var gender_list = "[\"Female\",\"Male\",\"Transgender Female\",\"Transgender Male\",\"Gender Variant\",\"Prefer Not to Say\"]"
     var result_query = colName + 
@@ -27,20 +30,25 @@ function test_gender_status(colName){
     return result_query
 }
 
-/* Name check*/
-//TEST DONE
+/*
+    This assertion checks whether the name is valid and only contain characters and numbers
+*/
 function test_name_validity(colName){
     var result_query = "REGEXP_CONTAINS(" + colName + ", r\"^[a-zA-Z0-9]+$\")"
     return result_query
 }
 
-//TEST DONE
+/*
+    This assertions compares with other input column to check whether the last name is unique
+*/
 function test_last_name_unique(colName1, colName2){
     var result_query = colName1 + " != " + colName2
     return result_query
 }
 
-//TEST TODO
+/*
+    The assertion checks that no name contain more than 3 repeated characters 
+*/
 function test_same_character_more_than_two_times(colName){
     var regex = "(aaa)+|(bbb)+|(ccc)+|(ddd)+|(eee)+|(fff)+|(ggg)+|(hhh)+|(iii)+|(jjj)+|(kkk)+|(lll)+|(mmm)+|" + 
     "(nnn)+|(ooo)+|(ppp)+|(qqq)+|(rrr)+|(sss)+|(ttt)+|(uuu)+|(vvv)+|(www)+|(xxx)+|(yyy)+|(zzz)+"

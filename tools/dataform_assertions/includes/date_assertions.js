@@ -3,19 +3,25 @@
 */
 
 
-//TEST TO-DO
+/*
+    This assertion checks whether input date is future
+*/
 function test_future_date(colName){
     var result_query = "PARSE_DATE('%Y/%m/%d'," + colName+") < CURRENT_DATE()"
     return result_query
 }
 
-//TEST TO-DO
+/*
+    This assertion checks whether the input birthdate is less than 100 yrs old
+*/
 function test_valid_years(colName){
     var result_query = "DATE_DIFF(CURRENT_DATE(), PARSE_DATE('%Y/%m/%d'," + colName + "), YEAR) < 100"
     return result_query
 }
 
-//TEST TO-DO
+/*
+    This function checks whether the format of  the date is correct
+*/
 function test_date_format(colName, date_format){
     try {
         if(date_format == "mm/dd/yyyy" | date_format == "dd/mm/yyyy"){
