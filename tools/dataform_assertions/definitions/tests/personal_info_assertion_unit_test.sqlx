@@ -49,6 +49,6 @@ config {
     test_same_character_more_than_two_times
     Return false if name repeated more than 3 times
 */
-SELECT "Alan" AS test_name UNION ALL    --This should pass 
-SELECT "Bob" AS test_name UNION ALL    --This should pass
-SELECT "Alannn" AS test_name              --This should fail
+--SELECT "Alan" AS test_name UNION ALL    --This should pass 
+--SELECT "Bob" AS test_name UNION ALL    --This should pass
+--SELECT "Alannn" AS test_name              --This should fail
